@@ -116,3 +116,31 @@ span {
     box-shadow: 0 0 5px white, 0 0 10px white, 0 0 10px white;
     font-weight: bold;
 }
+
+/*kevin added about Section*/
+#about {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+#pic {
+    display: flex;
+}
+#pic img {
+    width: 575px;
+    height: 400px;
+}
+#intro {
+    font-family: century;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 20px;
+}
+#intro h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
