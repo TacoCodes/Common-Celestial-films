@@ -353,3 +353,16 @@ span {
   .formbold-btn:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
   }
+  /* gallery placement */
+  .gallery{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start; /* align items to the left */
+  margin: 10px;
+  
+/* h3 adjustment */
+  }
+  h3{
+    color: blue;
+    padding: 20px;
+  }
