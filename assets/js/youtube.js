@@ -24,5 +24,4 @@ fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=U
        youtubeContainer.appendChild(player);
      }
 
-    
 });
