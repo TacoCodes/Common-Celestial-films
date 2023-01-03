@@ -80,5 +80,3 @@ class photoImages {
 
 // Create a new instance of the photoImages class
 const images = new photoImages;
-
-// Added Calander API Here
