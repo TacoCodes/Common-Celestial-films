@@ -143,8 +143,8 @@ a {
     display: flex;
 }
 #pic img {
-    width: 400px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
 }
 #intro {
     font-family: century;
