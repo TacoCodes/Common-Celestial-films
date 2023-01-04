@@ -1,27 +1,35 @@
-fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCyy1fXntMJGVc6GKmup4sgQ&maxResults=4&order=date&q=CommonCelestials&key=AIzaSyCSNFtTeZSLMcy_yTjY6W8EvJMto7yImXs")
-.then((result)=>{
-    // Return the result as JSON
-    return result.json()
-    
-}).then((data)=>{
-    // Log the JSON data to the console
-    console.log(data)
-    // Store the list of videos in a variable
-    let videos = data.items
-     // Select the element with the class "videos"
-     let youtubeContainer = document.querySelector(".videos");
+// Our channel API Key
+const API_KEY = "AIzaSyCSNFtTeZSLMcy_yTjY6W8EvJMto7yImXs";
 
-     // Iterate over the list of videos
+// The ID of Our channel 
+const CHANNEL_ID = "UCyy1fXntMJGVc6GKmup4sgQ";
 
-     for(video of videos) {
-        // Get the videoId for this video
-       let videoId = video.id.videoId;
-       // Create an iframe element for the video player
-       let player = document.createElement("iframe");
-       // Set the src attribute of the player to the YouTube player URL for this videos
-       player.src = `https://www.youtube.com/embed/${videoId}`;
-       // Append the player to the container element
-       youtubeContainer.appendChild(player);
-     }
-
-});
+// Make a request to the YouTube Data API to get a list of videos from our channel
+fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=20`)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    // Get the list of videos
+    let videos = data.items;
+    // Select the element with the class "videos"
+    let youtubeContainer = document.querySelector(".videos");
+    // Iterate over the list of videos
+    for (let video of videos) {
+      // Get the videoId for this video
+      let videoId = video.id.videoId;
+      // Create an iframe element for the video player
+      let player = document.createElement("iframe");
+      // Set the src attribute of the player to the YouTube player URL for this videos
+      player.src = `https://www.youtube.com/embed/${videoId}`;
+      // Set the width and height of the player
+      player.width = "640";
+      player.height = "360";
+      // Allow the player to be opened in full screen
+      player.allowFullscreen = true;
+      player.frameborder = 0;
+      // Append the player to the container element
+      youtubeContainer.appendChild(player);
+    }
+  });
