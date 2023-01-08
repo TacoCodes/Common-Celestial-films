@@ -20,7 +20,6 @@ class photoImages {
         // Fetch and display images based on search input
         this.Search.addEventListener('submit', (event)=>{
             this.getSearch(event);
-
         });
     }
     // Fetch and display curated images from Pexels API
@@ -76,7 +75,7 @@ class photoImages {
         // Reset the search form
         event.target.reset();
     }
-}
+};
 
 // Create a new instance of the photoImages class
 const images = new photoImages;
